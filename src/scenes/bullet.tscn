@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://1fl73lkb2yim"]
+
+[ext_resource type="Script" uid="uid://cy6qx7t7bjv3m" path="res://src/scripts/Bullet.gd" id="1_7jxxo"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_a4mbi"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_225pw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7jxxo"]
+radius = 0.55901927
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_7jxxo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_a4mbi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_225pw")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_7jxxo")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
