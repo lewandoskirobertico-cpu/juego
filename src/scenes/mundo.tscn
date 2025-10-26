@@ -22,7 +22,7 @@ sky = SubResource("Sky_x4uf2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8176404, 1.5760728, 1.0420451)
 
 [node name="Piso" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8176404, 1.1920929e-07, 1.0420451)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.8176404, 1.1920929e-07, 1.0420451)
 mesh = ExtResource("1_r122g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Piso"]
@@ -40,3 +40,6 @@ environment = SubResource("Environment_t1eg8")
 [node name="CharacterBody3D" parent="." instance=ExtResource("3_x4uf2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.506731, -2.9440956)
 velocidad = 100.0
+
+[node name="CharacterBody3D2" parent="." instance=ExtResource("3_x4uf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 92.67136, 181.43008)

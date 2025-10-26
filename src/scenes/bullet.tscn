@@ -9,7 +9,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_7jxxo"]
 radius = 0.55901927
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="bullet" type="CharacterBody3D"]
 script = ExtResource("1_7jxxo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -19,6 +19,8 @@ mesh = SubResource("SphereMesh_a4mbi")
 shape = SubResource("SphereShape3D_225pw")
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_7jxxo")

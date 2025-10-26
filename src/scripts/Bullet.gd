@@ -17,7 +17,5 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body is BaseEnemy:
-		body.recivir_ataque()
-		queue_free()s
-		
+	if body.has_method("recibir_disparo"):
+		body.recibir_disparo(damage)

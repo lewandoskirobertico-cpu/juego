@@ -27,18 +27,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2315228, 2.7198882)
 transform = Transform3D(1, 0, 0, 0, 0.9344098, 0.35619986, 0, -0.35619986, 0.9344098, 0.06979132, 1.9547203, 3.6561365)
 
 [node name="arma" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8448858, 0.8129716, 0.054049253)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8448858, 0.68883276, 0.53984815)
 
-[node name="Marker3D" type="Marker3D" parent="arma"]
+[node name="Attack" type="Area3D" parent="."]
 
-[node name="AreaDeteccion" type="Area3D" parent="."]
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaDeteccion"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Attack"]
 shape = SubResource("CylinderShape3D_cusn3")
 
 [node name="Timer" type="Timer" parent="."]
 
-[connection signal="body_entered" from="AreaDeteccion" to="." method="_on_area_deteccion_body_entered"]
-[connection signal="body_exited" from="AreaDeteccion" to="." method="_on_area_deteccion_body_exited"]
+[connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
+[connection signal="body_exited" from="Attack" to="." method="_on_attack_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
